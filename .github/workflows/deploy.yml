@@ -16,20 +16,19 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
+          host: 147.79.118.5
+          username: keiro
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "."
           target: "/home/keiro/htdocs/www.keiro.me"
           strip_components: 0
           overwrite: true
-          rm: false
 
       - name: Clean up .git folder on server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
+          host: 147.79.118.5
+          username: keiro
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             rm -rf /home/keiro/htdocs/www.keiro.me/.git
