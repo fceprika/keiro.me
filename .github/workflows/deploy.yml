@@ -18,7 +18,7 @@ jobs:
         with:
           host: 147.79.118.5
           username: keiro
-          key: ${{ secrets.VPS_SSH_KEY }}
+          password: ${{ secrets.VPS_PASSWORD }}
           source: "."
           target: "/home/keiro/htdocs/www.keiro.me"
           strip_components: 0
@@ -29,7 +29,7 @@ jobs:
         with:
           host: 147.79.118.5
           username: keiro
-          key: ${{ secrets.VPS_SSH_KEY }}
+          password: ${{ secrets.VPS_PASSWORD }}
           script: |
             rm -rf /home/keiro/htdocs/www.keiro.me/.git
             rm -rf /home/keiro/htdocs/www.keiro.me/.github
