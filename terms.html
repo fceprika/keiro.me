@@ -11,15 +11,24 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Language Detection -->
+  <script src="js/lang-redirect.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="header-content">
       <a href="index.html" class="logo">
-        
         <span class="logo-text">Keiro.</span>
       </a>
+      <nav class="header-nav">
+        <div class="lang-switch">
+          <a href="terms.html" class="lang-link active" onclick="document.cookie='lang_preference=en;path=/;max-age=31536000'">EN</a>
+          <span class="lang-separator">|</span>
+          <a href="/fr/terms.html" class="lang-link" onclick="document.cookie='lang_preference=fr;path=/;max-age=31536000'">FR</a>
+        </div>
+      </nav>
     </div>
   </header>
 
