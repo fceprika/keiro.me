@@ -5,7 +5,7 @@ const SUPABASE_URL = 'https://tkypwlisfygrlsamrbit.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRreXB3bGlzZnlncmxzYW1yYml0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY5MzIyMDgsImV4cCI6MjA4MjUwODIwOH0.m2tEriz9TlTCkKXCucSnHZgLZxdUlNfEN3Ro-oVjKxU';
 
 // Initialize Supabase client
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // DOM Elements
 const form = document.getElementById('beta-form');
@@ -61,7 +61,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     // Insert into Supabase
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('beta_signups')
       .insert([
         { email: email, platform: platform }
