@@ -24,7 +24,7 @@ jobs:
           strip_components: 0
           overwrite: true
 
-      - name: Clean up .git folder on server
+      - name: Clean up and reload nginx
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 147.79.118.5
@@ -33,4 +33,6 @@ jobs:
           script: |
             rm -rf /home/keiro/htdocs/www.keiro.me/.git
             rm -rf /home/keiro/htdocs/www.keiro.me/.github
+            # Verify deployed file
+            head -10 /home/keiro/htdocs/www.keiro.me/js/beta-signup.js
             echo "Deployed at $(date)"
