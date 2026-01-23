@@ -274,6 +274,7 @@ li {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
   margin: 0;
+  padding-top: 15px;
 }
 
 /* Phone Mockup */
@@ -490,7 +491,7 @@ li {
     gap: var(--space-md);
   }
 
-  .header-nav a:not(.btn) {
+  .header-nav a:not(.btn):not(.lang-link) {
     display: none;
   }
 
