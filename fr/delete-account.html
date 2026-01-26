@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de suppression de compte - Keiro</title>
+  <meta name="description" content="Demandez la suppression de votre compte Keiro et des donnees associees.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/app-icon.png">
+  <link rel="apple-touch-icon" href="../assets/images/app-icon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Delete Account Page Specific Styles */
+    .delete-page {
+      min-height: 100vh;
+      padding: var(--space-4xl) var(--space-xl);
+      padding-top: calc(var(--space-4xl) + 80px);
+    }
+
+    .delete-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .delete-header {
+      text-align: center;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .delete-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .delete-header p {
+      font-size: 1.1rem;
+    }
+
+    .data-section {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .data-section h2 {
+      font-size: 1.25rem;
+      margin: 0 0 var(--space-md) 0;
+      color: var(--color-text);
+    }
+
+    .data-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .data-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .data-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--color-text);
+      opacity: 0.6;
+      margin-top: 2px;
+    }
+
+    .delete-form {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+
+    .form-group:last-of-type {
+      margin-bottom: var(--space-xl);
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--color-text);
+      margin-bottom: var(--space-sm);
+      letter-spacing: 0.02em;
+    }
+
+    .form-label .optional {
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .delete-input,
+    .delete-select {
+      width: 100%;
+      padding: var(--space-md);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .delete-input:focus,
+    .delete-select:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .delete-input::placeholder {
+      color: var(--color-text-secondary);
+    }
+
+    .delete-select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right var(--space-md) center;
+      padding-right: calc(var(--space-md) * 2 + 16px);
+    }
+
+    .delete-select option {
+      background: #1a1a1a;
+      color: var(--color-text);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: var(--space-md) var(--space-xl);
+      background: var(--color-text);
+      color: var(--color-background);
+      border: 1px solid var(--color-text);
+      border-radius: 100px;
+      font-family: var(--font-family);
+      font-size: 1rem;
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: transparent;
+      color: var(--color-text);
+    }
+
+    .processing-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-xl);
+      padding: var(--space-md);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+    }
+
+    .back-home {
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-home a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .back-home a:hover {
+      color: var(--color-text);
+    }
+
+    .back-home svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .delete-header h1 {
+        font-size: 2rem;
+      }
+
+      .delete-page {
+        padding: var(--space-3xl) var(--space-md);
+        padding-top: calc(var(--space-3xl) + 80px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Keiro.</span>
+      </a>
+      <nav class="header-nav">
+        <div class="lang-switch">
+          <a href="/delete-account.html" class="lang-link">EN</a>
+          <span class="lang-separator">|</span>
+          <a href="/fr/delete-account.html" class="lang-link active">FR</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Delete Account Page -->
+  <main class="delete-page">
+    <div class="delete-content">
+      <div class="delete-header">
+        <h1>Demande de suppression de compte</h1>
+        <p>Nous sommes tristes de vous voir partir. Veuillez remplir ce formulaire pour demander la suppression de votre compte Keiro.</p>
+      </div>
+
+      <!-- Data that will be deleted -->
+      <div class="data-section">
+        <h2>Donnees qui seront definitivement supprimees :</h2>
+        <ul class="data-list">
+          <li>
+            <svg class="data-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+            </svg>
+            <span><strong>Profil et donnees personnelles</strong> - nom, date de naissance, lieu de naissance</span>
+          </li>
+          <li>
+            <svg class="data-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+            </svg>
+            <span><strong>Ames (connexions)</strong> - analyses de compatibilite avec les profils enregistres</span>
+          </li>
+          <li>
+            <svg class="data-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <span><strong>Historique des conversations</strong> - tous les echanges avec votre guide IA</span>
+          </li>
+          <li>
+            <svg class="data-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span><strong>Donnees de compte</strong> - adresse email et informations d'authentification</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Deletion Request Form -->
+      <form class="delete-form" action="https://formsubmit.co/contact@sekaijin.fr" method="POST">
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="Demande de suppression de compte Keiro">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://keiro.me/fr/delete-account.html?submitted=true">
+
+        <!-- Honeypot -->
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label for="email" class="form-label">Adresse email</label>
+          <input type="email" id="email" name="email" class="delete-input" placeholder="Entrez l'email de votre compte" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reason" class="form-label">Raison du depart <span class="optional">(optionnel)</span></label>
+          <select id="reason" name="reason" class="delete-select">
+            <option value="">Selectionnez une raison...</option>
+            <option value="no-longer-use">Je n'utilise plus l'application</option>
+            <option value="privacy-concerns">Preoccupations de confidentialite</option>
+            <option value="found-alternative">J'ai trouve une alternative</option>
+            <option value="other">Autre</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer la demande de suppression</button>
+      </form>
+
+      <div class="processing-note">
+        Votre demande sera traitee sous 30 jours. Vous recevrez un email de confirmation une fois vos donnees supprimees.
+      </div>
+
+      <div class="back-home">
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Retour a l'accueil
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <nav class="footer-links">
+        <a href="privacy.html">Politique de confidentialite</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </nav>
+      <p class="footer-copyright">
+        &copy; 2025 Sekaijin. Tous droits reserves.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Handle form submission success -->
+  <script>
+    if (window.location.search.includes('submitted=true')) {
+      const form = document.querySelector('.delete-form');
+      form.innerHTML = `
+        <div style="text-align: center; padding: var(--space-xl) 0;">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" style="margin-bottom: var(--space-lg);">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <h2 style="margin-bottom: var(--space-md);">Demande envoyee</h2>
+          <p style="margin: 0;">Merci. Nous avons bien recu votre demande de suppression de compte et la traiterons sous 30 jours.</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
