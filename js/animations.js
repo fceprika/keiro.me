@@ -102,14 +102,7 @@ function initiPhoneReveal() {
 
       if (entry.isIntersecting) {
         iphone.classList.add('revealed');
-      } else {
-        const rect = iphone.getBoundingClientRect();
-        const isAboveViewport = rect.bottom < 0;
-        const isBelowViewport = rect.top > window.innerHeight;
-
-        if (isAboveViewport || isBelowViewport) {
-          iphone.classList.remove('revealed');
-        }
+        iphoneObserver.unobserve(iphone);
       }
     });
   }, {
