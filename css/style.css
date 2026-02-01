@@ -286,44 +286,6 @@ li {
   padding-top: 15px;
 }
 
-/* Phone Mockup */
-.hero-phone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-frame {
-  position: relative;
-  width: 280px;
-  background: #1a1a1a;
-  border-radius: 40px;
-  padding: 12px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    0 0 100px rgba(255, 255, 255, 0.05);
-}
-
-.phone-notch {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 28px;
-  background: #000;
-  border-radius: 20px;
-  z-index: 10;
-}
-
-.phone-screen {
-  width: 100%;
-  height: auto;
-  border-radius: 28px;
-  display: block;
-}
-
 /* Features Section */
 .features {
   padding: var(--space-4xl) var(--space-xl);
@@ -522,10 +484,6 @@ li {
     max-width: 280px;
   }
 
-  .phone-frame {
-    width: 240px;
-  }
-
   .features {
     padding: var(--space-3xl) var(--space-md);
   }
@@ -554,9 +512,6 @@ li {
     grid-template-columns: 1fr;
   }
 
-  .phone-frame {
-    width: 200px;
-  }
 }
 
 /* Pricing Page */
@@ -1017,190 +972,6 @@ li {
   .pill-content {
     min-width: 140px;
     justify-content: center;
-  }
-}
-
-/* App Showcase Section - Minimalist Japanese Style */
-.showcase {
-  padding: var(--space-4xl) var(--space-xl);
-  position: relative;
-  z-index: 1;
-}
-
-.showcase-header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto var(--space-4xl);
-}
-
-.showcase-header h2 {
-  font-size: 2.5rem;
-  font-weight: var(--font-weight-light);
-  margin: 0 0 var(--space-md) 0;
-  letter-spacing: -0.01em;
-}
-
-.showcase-header p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.showcase-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-3xl) 0;
-}
-
-.showcase-item:nth-child(even) {
-  direction: rtl;
-}
-
-.showcase-item:nth-child(even) > * {
-  direction: ltr;
-}
-
-.showcase-item + .showcase-item {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.showcase-text {
-  padding: var(--space-xl) 0;
-}
-
-.showcase-number {
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
-  display: block;
-}
-
-.showcase-text h3 {
-  font-size: 1.75rem;
-  font-weight: var(--font-weight-light);
-  margin: 0 0 var(--space-md) 0;
-  line-height: 1.3;
-}
-
-.showcase-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.showcase-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.showcase-phone {
-  position: relative;
-  width: 240px;
-  background: #111;
-  border-radius: 36px;
-  padding: 10px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 25px 50px -12px rgba(0, 0, 0, 0.6);
-}
-
-.showcase-phone-notch {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 24px;
-  background: #000;
-  border-radius: 16px;
-  z-index: 10;
-}
-
-.showcase-phone img {
-  width: 100%;
-  height: auto;
-  border-radius: 26px;
-  display: block;
-}
-
-/* Responsive for showcase */
-@media (max-width: 1024px) {
-  .showcase-item {
-    gap: var(--space-2xl);
-  }
-
-  .showcase-phone {
-    width: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .showcase-header h2 {
-    font-size: 2rem;
-  }
-
-  .showcase-item {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--space-xl);
-    padding: var(--space-2xl) 0;
-  }
-
-  .showcase-item:nth-child(even) {
-    direction: ltr;
-  }
-
-  .showcase-text {
-    order: 2;
-    padding: 0;
-  }
-
-  .showcase-image {
-    order: 1;
-  }
-
-  .showcase-text h3 {
-    font-size: 1.5rem;
-  }
-
-  .showcase-phone {
-    width: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .showcase {
-    padding: var(--space-3xl) var(--space-md);
-  }
-
-  .showcase-header {
-    margin-bottom: var(--space-2xl);
-  }
-
-  .showcase-header h2 {
-    font-size: 1.75rem;
-  }
-
-  .showcase-phone {
-    width: 160px;
-    border-radius: 28px;
-    padding: 8px;
-  }
-
-  .showcase-phone-notch {
-    width: 60px;
-    height: 18px;
-    top: 8px;
-  }
-
-  .showcase-phone img {
-    border-radius: 20px;
   }
 }
 
