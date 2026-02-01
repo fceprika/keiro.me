@@ -52,34 +52,13 @@ keiro.me/
 - **Theme:** Dark mode only, minimalist Japanese aesthetic
 - **Responsive:** Mobile-first with breakpoints at 480px, 768px, 1024px
 
-## Testing with MCP Tools
+## Testing — OBLIGATOIRE
 
-### Chrome DevTools MCP
+**Apres chaque modification CSS/JS/HTML, tu DOIS tester visuellement avec Chrome DevTools MCP avant de commit.**
 
-Use for visual testing and interaction:
+Teste au minimum sur mobile (iPhone 390x844) et verifie les erreurs console. Pour le guide complet, lis `chrome_mcp.md` a la racine du projet.
 
-```
-# Open the site
-navigate_page (url: "file:///Users/weck0/Apps/keiro.me/index.html")
-
-# Get page structure (PREFERRED over screenshots)
-take_snapshot
-
-# Take viewport screenshot only (NOT fullPage to avoid size limits)
-take_screenshot
-
-# Test beta form
-fill (uid: <email-input-uid>, value: "test@example.com")
-click (uid: <submit-button-uid>)
-
-# Check console for errors
-list_console_messages
-```
-
-**IMPORTANT - Screenshot limits:**
-- NEVER use `fullPage: true` - images over 8000px will fail
-- Use `take_snapshot` for structure/content inspection
-- If you need to see the full page, scroll and take multiple viewport screenshots
+Si les outils `mcp__chrome-devtools__*` ne sont pas disponibles dans ta session, demande a l'utilisateur de relancer avec le MCP installe (voir `chrome_mcp.md` pour la procedure d'installation).
 
 ### Supabase MCP
 
