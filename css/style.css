@@ -1085,10 +1085,10 @@ li {
   opacity: 1;
 }
 
-/* Hero iPhone - visible on load (desktop) */
+/* Hero iPhone - starts hidden, animated via JS on desktop */
 .hero .iphone-3d {
-  transform: rotateY(0deg);
-  opacity: 1;
+  transform: rotateY(30deg);
+  opacity: 0;
 }
 
 /* iPhone Body */
@@ -1426,16 +1426,6 @@ li {
   .iphone-3d {
     width: 240px;
     height: 500px;
-  }
-
-  .hero .iphone-3d {
-    transform: rotateY(30deg);
-    opacity: 0;
-  }
-
-  .hero .iphone-3d.revealed {
-    transform: rotateY(0deg);
-    opacity: 1;
   }
 
   .feature-grid {

@@ -18,14 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
  * Handle window resize - update hero iPhone behavior
  */
 function handleResize() {
-  const heroIphone = document.querySelector('.hero .iphone-3d');
-  if (!heroIphone) return;
-
-  if (isMobile()) {
-    heroIphone.classList.remove('revealed');
-  } else {
-    heroIphone.classList.add('revealed');
-  }
+  // No special resize handling needed — hero iPhone is managed
+  // by delayed reveal on desktop and scroll observer on mobile
 }
 
 /**
@@ -89,17 +83,22 @@ function initScrollReveal() {
 function initiPhoneReveal() {
   const heroIphone = document.querySelector('.hero .iphone-3d');
 
-  // Desktop: Hero iPhone visible immediately
+  // Desktop: Hero iPhone reveals with 0.5s delay after page load
   if (!isMobile() && heroIphone) {
-    heroIphone.classList.add('revealed');
+    setTimeout(() => {
+      heroIphone.classList.add('revealed');
+    }, 500);
   }
 
-  // All iPhones use bidirectional scroll reveal
-  const allIphones = document.querySelectorAll('.iphone-3d');
+  // All iPhones (including hero on mobile) use bidirectional scroll reveal
+  const featureIphones = document.querySelectorAll('.iphone-3d');
 
   const iphoneObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const iphone = entry.target;
+
+      // On desktop, skip scroll logic for hero iPhone (handled by timeout)
+      if (!isMobile() && iphone.closest('.hero')) return;
 
       if (entry.isIntersecting) {
         iphone.classList.add('revealed');
@@ -118,5 +117,5 @@ function initiPhoneReveal() {
     rootMargin: '-50px 0px -50px 0px'
   });
 
-  allIphones.forEach(iphone => iphoneObserver.observe(iphone));
+  featureIphones.forEach(iphone => iphoneObserver.observe(iphone));
 }
