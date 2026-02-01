@@ -1085,12 +1085,6 @@ li {
   opacity: 1;
 }
 
-/* Hero iPhone - starts hidden, animated via JS on desktop */
-.hero .iphone-3d {
-  transform: rotateY(30deg);
-  opacity: 0;
-}
-
 /* iPhone Body */
 .iphone-body {
   position: absolute;
