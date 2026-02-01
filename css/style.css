@@ -1085,6 +1085,13 @@ li {
   opacity: 1;
 }
 
+/* After animation settles, flatten 3D to prevent iOS Safari compositing bugs */
+.iphone-3d.revealed.settled {
+  transform-style: flat;
+  transform: none;
+  perspective: none;
+}
+
 /* iPhone Body */
 .iphone-body {
   position: absolute;
@@ -1099,8 +1106,6 @@ li {
     20px 20px 60px rgba(0,0,0,0.4),
     inset 0 1px 1px rgba(255,255,255,0.1),
     inset 0 -1px 1px rgba(0,0,0,0.5);
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 /* iPhone Side Buttons */
@@ -1151,7 +1156,6 @@ li {
   box-shadow:
     inset 0 0 0 2px #0a0a0a,
     inset 0 0 20px rgba(0,0,0,0.8);
-  backface-visibility: hidden;
 }
 
 /* iPhone Notch */

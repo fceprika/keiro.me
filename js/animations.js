@@ -87,6 +87,8 @@ function initiPhoneReveal() {
   if (!isMobile() && heroIphone) {
     setTimeout(() => {
       heroIphone.classList.add('revealed');
+      // After animation completes, flatten 3D to prevent iOS compositing bugs
+      setTimeout(() => heroIphone.classList.add('settled'), 2500);
     }, 500);
   }
 
@@ -102,6 +104,8 @@ function initiPhoneReveal() {
 
       if (entry.isIntersecting) {
         iphone.classList.add('revealed');
+        // After animation completes, flatten 3D to prevent iOS compositing bugs
+        setTimeout(() => iphone.classList.add('settled'), 2500);
         iphoneObserver.unobserve(iphone);
       }
     });
