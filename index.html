@@ -23,6 +23,11 @@
   <script src="js/lang-redirect.js"></script>
 </head>
 <body>
+  <!-- Starfield Background -->
+  <div class="starfield"></div>
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -44,9 +49,9 @@
   <main class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Discover your path through ancient wisdom.</h1>
+        <h1>Find your path</h1>
         <p class="hero-description">
-          Keiro combines numerology, astrology, and Chinese zodiac to reveal personalized insights about your personality, relationships, and life purpose.
+          Keiro combines numerology, astrology, and Chinese zodiac to reveal your life purpose.
         </p>
         <!-- Beta Signup Form -->
         <div id="beta-signup" class="beta-signup">
@@ -99,77 +104,146 @@
         </div>
       </div>
       <div class="hero-phone">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <img src="assets/images/screenshot-home.png" alt="Keiro App Screenshot" class="phone-screen">
+        <div class="iphone-3d-container">
+          <div class="iphone-3d" data-iphone="hero">
+            <div class="iphone-side-btn mute"></div>
+            <div class="iphone-side-btn volume-up"></div>
+            <div class="iphone-side-btn volume-down"></div>
+            <div class="iphone-side-btn power"></div>
+            <div class="iphone-body"></div>
+            <div class="iphone-bezel">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="assets/images/screenshot-home.png" alt="Keiro App Screenshot">
+              </div>
+              <div class="iphone-home-indicator"></div>
+            </div>
+            <div class="iphone-shadow"></div>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- App Showcase Section -->
-  <section class="showcase">
-    <div class="showcase-header">
-      <h2>Your journey to self-discovery.</h2>
-      <p>Explore the ancient wisdom that guides your path through life, relationships, and personal growth.</p>
-    </div>
-
-    <!-- Feature 1: Daily Energy -->
-    <div class="showcase-item">
-      <div class="showcase-text">
-        <span class="showcase-number">01</span>
-        <h3>Get your daily energy reading.</h3>
-        <p>Start each day with personalized insights based on your numerology profile. Understand the cosmic energies influencing your day and make aligned decisions.</p>
+  <!-- Feature 1: Daily Energy -->
+  <section class="feature-section">
+    <div class="feature-grid">
+      <div class="feature-text">
+        <p class="eyebrow reveal">Daily Energy</p>
+        <h3 class="reveal reveal-delay-1">Get your daily energy reading.</h3>
+        <p class="reveal reveal-delay-2">Start each day with personalized insights based on your numerology profile. Understand the cosmic energies influencing your day and make aligned decisions.</p>
+        <a href="#beta-signup" class="cta-link reveal reveal-delay-3">Learn more</a>
       </div>
-      <div class="showcase-image">
-        <div class="showcase-phone">
-          <div class="showcase-phone-notch"></div>
-          <img src="assets/images/screen-home.png" alt="Daily Energy Reading">
+      <div class="feature-visual">
+        <div class="iphone-3d-container">
+          <div class="iphone-3d" data-iphone="feature">
+            <div class="iphone-side-btn mute"></div>
+            <div class="iphone-side-btn volume-up"></div>
+            <div class="iphone-side-btn volume-down"></div>
+            <div class="iphone-side-btn power"></div>
+            <div class="iphone-body"></div>
+            <div class="iphone-bezel">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="assets/images/screen-home.png" alt="Daily Energy Reading">
+              </div>
+              <div class="iphone-home-indicator"></div>
+            </div>
+            <div class="iphone-shadow"></div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Feature 2: Souls Compatibility -->
-    <div class="showcase-item">
-      <div class="showcase-text">
-        <span class="showcase-number">02</span>
-        <h3>Understand your relationships.</h3>
-        <p>Discover the cosmic connections between you and the people in your life. Explore compatibility scores and insights for love, friendship, and collaboration.</p>
+  <!-- Feature 2: Souls Compatibility -->
+  <section class="feature-section">
+    <div class="feature-grid">
+      <div class="feature-text">
+        <p class="eyebrow reveal">Souls Compatibility</p>
+        <h3 class="reveal reveal-delay-1">Understand your relationships.</h3>
+        <p class="reveal reveal-delay-2">Discover the cosmic connections between you and the people in your life. Explore compatibility scores and insights for love, friendship, and collaboration.</p>
+        <a href="#beta-signup" class="cta-link reveal reveal-delay-3">Learn more</a>
       </div>
-      <div class="showcase-image">
-        <div class="showcase-phone">
-          <div class="showcase-phone-notch"></div>
-          <img src="assets/images/screen-souls.png" alt="Souls Compatibility">
+      <div class="feature-visual">
+        <div class="iphone-3d-container">
+          <div class="iphone-3d" data-iphone="feature">
+            <div class="iphone-side-btn mute"></div>
+            <div class="iphone-side-btn volume-up"></div>
+            <div class="iphone-side-btn volume-down"></div>
+            <div class="iphone-side-btn power"></div>
+            <div class="iphone-body"></div>
+            <div class="iphone-bezel">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="assets/images/screen-souls.png" alt="Souls Compatibility">
+              </div>
+              <div class="iphone-home-indicator"></div>
+            </div>
+            <div class="iphone-shadow"></div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Feature 3: AI Chat -->
-    <div class="showcase-item">
-      <div class="showcase-text">
-        <span class="showcase-number">03</span>
-        <h3>Ask AI for personalized insights.</h3>
-        <p>Have meaningful conversations with an AI that understands your complete numerological and astrological profile. Get answers tailored to your unique energy.</p>
+  <!-- Feature 3: AI Chat -->
+  <section class="feature-section">
+    <div class="feature-grid">
+      <div class="feature-text">
+        <p class="eyebrow reveal">AI Insights</p>
+        <h3 class="reveal reveal-delay-1">Ask AI for personalized insights.</h3>
+        <p class="reveal reveal-delay-2">Have meaningful conversations with an AI that understands your complete numerological and astrological profile. Get answers tailored to your unique energy.</p>
+        <a href="#beta-signup" class="cta-link reveal reveal-delay-3">Learn more</a>
       </div>
-      <div class="showcase-image">
-        <div class="showcase-phone">
-          <div class="showcase-phone-notch"></div>
-          <img src="assets/images/screen-chat.png" alt="AI Chat Insights">
+      <div class="feature-visual">
+        <div class="iphone-3d-container">
+          <div class="iphone-3d" data-iphone="feature">
+            <div class="iphone-side-btn mute"></div>
+            <div class="iphone-side-btn volume-up"></div>
+            <div class="iphone-side-btn volume-down"></div>
+            <div class="iphone-side-btn power"></div>
+            <div class="iphone-body"></div>
+            <div class="iphone-bezel">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="assets/images/screen-chat.png" alt="AI Chat Insights">
+              </div>
+              <div class="iphone-home-indicator"></div>
+            </div>
+            <div class="iphone-shadow"></div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Feature 4: Your Profile -->
-    <div class="showcase-item">
-      <div class="showcase-text">
-        <span class="showcase-number">04</span>
-        <h3>Discover your complete profile.</h3>
-        <p>Explore the full depth of your numerology numbers, Western zodiac, and Chinese astrology. Understand the cosmic blueprint that makes you unique.</p>
+  <!-- Feature 4: Your Profile -->
+  <section class="feature-section">
+    <div class="feature-grid">
+      <div class="feature-text">
+        <p class="eyebrow reveal">Complete Profile</p>
+        <h3 class="reveal reveal-delay-1">Discover your complete profile.</h3>
+        <p class="reveal reveal-delay-2">Explore the full depth of your numerology numbers, Western zodiac, and Chinese astrology. Understand the cosmic blueprint that makes you unique.</p>
+        <a href="#beta-signup" class="cta-link reveal reveal-delay-3">Learn more</a>
       </div>
-      <div class="showcase-image">
-        <div class="showcase-phone">
-          <div class="showcase-phone-notch"></div>
-          <img src="assets/images/screen-you.png" alt="Your Profile">
+      <div class="feature-visual">
+        <div class="iphone-3d-container">
+          <div class="iphone-3d" data-iphone="feature">
+            <div class="iphone-side-btn mute"></div>
+            <div class="iphone-side-btn volume-up"></div>
+            <div class="iphone-side-btn volume-down"></div>
+            <div class="iphone-side-btn power"></div>
+            <div class="iphone-body"></div>
+            <div class="iphone-bezel">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="assets/images/screen-you.png" alt="Your Profile">
+              </div>
+              <div class="iphone-home-indicator"></div>
+            </div>
+            <div class="iphone-shadow"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -177,11 +251,27 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
+    <div class="footer-content footer-centered">
+      <div class="footer-logo">
+        <span>Keiro</span>
+        <span class="kanji">道</span>
+      </div>
       <nav class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </nav>
+      <div class="social-links">
+        <a href="https://instagram.com/keiro.app" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://x.com/keiroapp" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+      </div>
       <p class="footer-copyright">
         &copy; 2025 Sekaijin. All rights reserved.
       </p>
@@ -192,6 +282,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- Beta Signup Script -->
   <script src="js/beta-signup.js?v=2"></script>
+  <!-- Animations -->
+  <script src="js/animations.js"></script>
 </body>
 </html>
-
