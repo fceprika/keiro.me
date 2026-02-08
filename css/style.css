@@ -279,6 +279,10 @@ li {
   margin-bottom: var(--space-lg);
 }
 
+.hero-cta {
+  margin-top: var(--space-lg);
+}
+
 .hero-subtext {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
